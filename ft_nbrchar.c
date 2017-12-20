@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcpy.c                                      .::    .:/ .      .::   */
+/*   ft_nbrchar.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: aweiler <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: ythollet <ythollet@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/12/03 21:06:15 by aweiler      #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/10 17:33:43 by aweiler     ###    #+. /#+    ###.fr     */
+/*   Created: 2017/12/17 15:29:29 by ythollet     #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/17 15:29:29 by ythollet    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
+int		ft_nbrchar(char *str, char c)
 {
-	int i;
+	int count;
 
-	i = 0;
-	while (src[i])
+	count = 0;
+	while (*str)
 	{
-		dst[i] = src[i];
-		i++;
+		if (*str++ == c)
+			count++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (count);
 }

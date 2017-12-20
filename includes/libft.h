@@ -1,17 +1,19 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aweiler <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:41:12 by aweiler           #+#    #+#             */
-/*   Updated: 2017/11/21 16:51:45 by aweiler          ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   libft.h                                          .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: aweiler <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2017/12/14 14:27:42 by aweiler      #+#   ##    ##    #+#       */
+/*   Updated: 2017/12/17 13:39:18 by ythollet    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 4096
 
 # include <unistd.h>
 # include <string.h>
@@ -23,6 +25,13 @@ typedef	struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+typedef struct	s_stock
+{
+	char			*str;
+	int				fd;
+	struct s_stock	*next;
+}				t_stock;
+int				get_next_line(const int fd, char **line);
 void			ft_putchar(char c);
 size_t			ft_strlen(const char *s);
 void			ft_putstr(char const *s);
@@ -51,7 +60,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *haystack, const char *needle);
 char			*ft_strnstr(const char *haystack,
-									const char *needle, size_t len);
+		const char *needle, size_t len);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 int				ft_isalpha(int c);
@@ -87,4 +96,5 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				ft_nbrchar(char *str, char c);
 #endif

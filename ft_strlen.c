@@ -6,12 +6,12 @@
 /*   By: aweiler <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/03 21:06:15 by aweiler      #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/03 21:06:15 by aweiler     ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/10 17:30:50 by aweiler     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 size_t	ft_strlen(const char *s)
 {
